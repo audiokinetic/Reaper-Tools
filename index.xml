@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Audiokinetic" commit="23183e7d8348c7587905bf494c6d1431a85eaed5">
+  <category name="Extensions">
+    <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaWwise\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaWwise is a REAPER extension that sound designers can use to transfer audio files from REAPER into Wwise projects. The transfer process creates Wwise objects in manually defined hierarchies, so that Wwise users can start working with the imported sounds immediately.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Supported Platforms\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Windows\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mac\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Basic Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Open your REAPER and Wwise projects.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Configure your REAPER render settings appropriately. The render settings determine which files will be transferred to Wwise.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Open ReaWwise and configure settings such as the Originals Subfolder (optional), Import Destination, Wwise Structures, and so on.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab Preview the audio files and Wwise objects to be transferred in the Preview Panel.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab Click {\b Transfer To Wwise} to transfer the audio files and create the corresponding Wwise objects.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 UserPlugins Directory\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Windows: %appdata%\\REAPER\\UserPlugins\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mac: ~/Library/Application Support/REAPER/UserPlugins\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Other Resources\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Refer to the {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com/library/reawwise"}}{\fldrslt{\ul
+ReaWwise User Guide
+}}}
+ for more information regarding usage, installation and troubleshooting of the extension.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 For general questions about usage, refer to Audiokinetic's {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/ask"}}{\fldrslt{\ul
+Community Q&A
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The repository is not open to pull request but in the case of a bug report, bugfix or a suggestions, please feel free to {\field{\*\fldinst{HYPERLINK "https://github.com/audiokinetic/ReaWwise/issues"}}{\fldrslt{\ul
+open an issue
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Feature requests can also be submitted to the {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/feature-requests/"}}{\fldrslt{\ul
+feature request section
+}}}
+ of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169? 2022 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+Audiokinetic Inc.
+}}}
+ All rights reserved.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Acknowledgements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Inspired by the work of {\field{\*\fldinst{HYPERLINK "https://github.com/karltechno"}}{\fldrslt{\ul
+Karl Davis
+}}}
+\par}
+}
+]]></description>
+        <link rel="screenshot" href="https://github.com/audiokinetic/ReaWwise/blob/main/user-interface.png">User Interface</link>
+      </metadata>
+      <version name="1.0.1" author="Audiokinetic" time="2022-09-13T18:40:25Z">
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dylib</source>
+      </version>
+    </reapack>
+  </category>
+</index>
