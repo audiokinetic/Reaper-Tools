@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="23183e7d8348c7587905bf494c6d1431a85eaed5">
+<index version="1" name="Audiokinetic" commit="08fc842cd40abc6537e6e5406eecbc0057d61cdc">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -56,6 +56,10 @@ Karl Davis
       <version name="1.0.1" author="Audiokinetic" time="2022-09-13T18:40:25Z">
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.2" author="Audiokinetic" time="2022-09-21T18:20:16Z">
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.2/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.2/reaper_reawwise.dylib</source>
       </version>
     </reapack>
   </category>
