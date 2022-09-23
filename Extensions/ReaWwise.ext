@@ -1,6 +1,9 @@
 @description ReaWwise
 @author Audiokinetic
-@version 1.0.2
+@version 1.0.3
+@changelog
+  Bug fix:
+    - Fixed issue where the preview panel is empty due to parsing RENDER_TARGETS incorrectly for REAPER 6.68
 @provides
   [win64] reaper_reawwise.dll https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dll
   [darwin] reaper_reawwise.dylib https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dylib
