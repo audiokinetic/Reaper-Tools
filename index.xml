@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="08fc842cd40abc6537e6e5406eecbc0057d61cdc">
+<index version="1" name="Audiokinetic" commit="038a6980401da08ca51431dd0adf8982c2721e1c">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -54,12 +54,20 @@ Karl Davis
         <link rel="screenshot" href="https://github.com/audiokinetic/ReaWwise/blob/main/user-interface.png">User Interface</link>
       </metadata>
       <version name="1.0.1" author="Audiokinetic" time="2022-09-13T18:40:25Z">
+        <changelog><![CDATA[Various bug fixes]]></changelog>
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dylib</source>
       </version>
       <version name="1.0.2" author="Audiokinetic" time="2022-09-21T18:20:16Z">
+        <changelog><![CDATA[Various bug fixes]]></changelog>
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.2/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.2/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.3" author="Audiokinetic" time="2022-09-23T20:49:08Z">
+        <changelog><![CDATA[Bug fix:
+  - Fixed issue where the preview panel is empty due to parsing RENDER_TARGETS incorrectly for REAPER 6.68]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.3/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.3/reaper_reawwise.dylib</source>
       </version>
     </reapack>
   </category>
