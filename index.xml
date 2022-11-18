@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="038a6980401da08ca51431dd0adf8982c2721e1c">
+<index version="1" name="Audiokinetic" commit="8b28b3c48306609eac18fe4e686a49fc3685704f">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -68,6 +68,24 @@ Karl Davis
   - Fixed issue where the preview panel is empty due to parsing RENDER_TARGETS incorrectly for REAPER 6.68]]></changelog>
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.3/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.3/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.4" author="Audiokinetic" time="2022-11-18T15:12:11Z">
+        <changelog><![CDATA[New Features:
+  - Added "ReaWwise: Open", "ReaWwise: Close" and "ReaWwise: Transfer To Wwise" actions to REAPER's action list. And added AK_Json_Clear and AK_Json_ClearAll functions to ReaScript.
+
+Miscellaneous Changes:
+  - Made read-only text fields look different from editable ones.
+  - Added focus feedback for drop-down lists.
+  - Added more tooltips throughout the user interface.
+  - Added Actor-Mixer as a possible Object Type for Wwise structures.
+
+Bug Fixes:
+  - Fixed: A corrupted preset file is created when clicking Cancel in the Wwise structures Save Preset dialog.
+  - Fixed: Transfer to Wwise button is still available when there are no items in preview pane.
+  - Fixed: Import details are wrong when Originals folder is blank.
+  - Fixed: When attempting to create a Sound SFX directly under a Physical Folder (an illegal parent/child relationship), no error is generated and the audio files are added to the Originals folder.]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.4/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.4/reaper_reawwise.dylib</source>
       </version>
     </reapack>
   </category>
