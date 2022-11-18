@@ -1,9 +1,21 @@
 @description ReaWwise
 @author Audiokinetic
-@version 1.0.3
+@version 1.0.4
 @changelog
-  Bug fix:
-    - Fixed issue where the preview panel is empty due to parsing RENDER_TARGETS incorrectly for REAPER 6.68
+  New Features:
+    - Added "ReaWwise: Open", "ReaWwise: Close" and "ReaWwise: Transfer To Wwise" actions to REAPER's action list. And added AK_Json_Clear and AK_Json_ClearAll functions to ReaScript.
+
+  Miscellaneous Changes:
+    - Made read-only text fields look different from editable ones.
+    - Added focus feedback for drop-down lists.
+    - Added more tooltips throughout the user interface.
+    - Added Actor-Mixer as a possible Object Type for Wwise structures.
+
+  Bug Fixes:
+    - Fixed: A corrupted preset file is created when clicking Cancel in the Wwise structures Save Preset dialog.
+    - Fixed: Transfer to Wwise button is still available when there are no items in preview pane.
+    - Fixed: Import details are wrong when Originals folder is blank.
+    - Fixed: When attempting to create a Sound SFX directly under a Physical Folder (an illegal parent/child relationship), no error is generated and the audio files are added to the Originals folder.
 @provides
   [win64] reaper_reawwise.dll https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dll
   [darwin] reaper_reawwise.dylib https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dylib
