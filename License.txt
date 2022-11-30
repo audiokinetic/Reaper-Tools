@@ -1,0 +1,72 @@
+                        AUDIOKINETIC REAPER SCRIPTS LICENSE
+
+    1. Scripts.  AUDIOKINETIC Inc. (“AUDIOKINETIC”) may make available to you from time
+       to time scripts or other tools related to REAPER which have the purpose of
+       improving the workflow of and integration with some of AUDIOKINETC’s
+       technologies (collectively, and with all associated documentation files,
+       “Scripts”).  Such Scripts are made available to you under the terms of this
+       Scripts License (this “License”). By using the Scripts, you agree to be bound by
+       this License.
+
+    2. Title.  Title, ownership rights, and intellectual property rights in the Scripts
+       shall remain with AUDIOKINETIC.  You are granted no rights in the Scripts other
+       than the rights expressly set forth below.
+
+    3. License Grant.  AUDIOKINETIC grants to any person obtaining a copy of a Script
+       (“you”), the unrestricted to use, copy, modify, publish, distribute, and/or
+       sublicense copies of the Script, subject to the terms of this License.
+
+    4. No Code Contribution. AUDIOKINETIC does not currently accept or and will not
+       consider any code contribution, unless otherwise indicated.
+
+    5. No Commercialization.  You may not commercialize any Script or derivative work
+       thereof as a standalone file.
+
+    6. Notices.  The copyright and license notices in the header file of the Script
+       must be included in all copies of the Script.
+
+    7. Disclaimer of Warranty.  THE SCRIPTS ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF
+       ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+       MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+       EVENT SHALL AUDIOKINETIC BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+       WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+       CONNECTION WITH THE SCRIPTS OR THE USE OR OTHER DEALINGS IN THE SCRIPTS; IF
+       AUDIOKINETIC IS NEVERTHELESS LIABLE AS A MATTER OF LAW, IN NO EVENT WILL
+       AUDIOKINETIC'S LIABILITY ARISING OUT OF OR RELATED TO THIS LICENSE OR THE
+       SCRIPTS EXCEED TEN CANADIAN DOLLARS.
+
+    8. Termination.  This license will terminate automatically if you fail to comply
+       with the restrictions described herein. On termination, you must destroy all
+       copies of the Scripts in your possession.
+
+    9. Export and Sanctions Controls.  You agree to comply with all sanctions and
+       export laws, restrictions, national security controls and regulations of Canada,
+       the United States or any other applicable national or foreign agency or
+       authority.
+
+   10. Miscellaneous.  This license represents the complete agreement concerning this
+       license and may be amended only in writing. If any provision of this License is
+       held to be unenforceable, such provision shall be reformed only to the extent
+       necessary to make it enforceable. This License will be governed by and construed
+       under the laws of the province of Quebec and the laws of Canada applicable
+       therein and the parties hereto submit to the exclusive jurisdiction of the
+       courts of Province of Quebec, District of Montreal.
+
+   11. Language.  You confirm that a French version of this License has been remitted
+       to you. It is the express wish of the parties to be bound only by the English
+       version of such agreement. Vous confirmez que la version française de cette
+       entente vous a été remise. Les parties expriment leur volonté expresse d’être
+       liées seulement par la version anglaise de cette entente.
+
+END OF TERMS AND CONDITIONS
+
+Copyright (c) 2022 AUDIOKINETIC Inc.
+
+The script in this file is licensed to use under the license available at:
+https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/main/License.txt (the "License").
+You may not use this file except in compliance with the License.
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations under the License.
