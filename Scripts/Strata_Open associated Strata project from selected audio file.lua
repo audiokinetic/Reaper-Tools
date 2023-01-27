@@ -1,15 +1,15 @@
 --[[
   @description Strata_Open associated Strata project from selected audio file
   @author Audiokinetic
-  @version 1.0.0-rc.1
+  @version 1.1.0
   @changelog
-    Initial release
+    Added support for Media Explorer Databases
   @provides
     [main=mediaexplorer] . https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/$commit/Scripts/Strata_Open%20associated%20Strata%20project%20from%20selected%20audio%20file.lua
   @about
     The script opens up the associated Strata project for the currectly selected audio file in the Media Explorer.
   @license
-    Copyright (c) 2022 AUDIOKINETIC Inc.
+    Copyright (c) 2023 AUDIOKINETIC Inc.
 
     The script in this file is licensed to use under the license available at:
     https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/main/License.txt (the "License").
@@ -28,8 +28,12 @@ local OK_CANCEL_MESSAGE_BOX = 1
 local MEDIA_EXPLORER_ID = 1000
 local MEDIA_EXPLORER_LIST_VIEW_ID = 1001
 local MEDIA_EXPLORER_DIRECTORY_ID = 1002
+local FULL_PATH_CMD_ID = 42026
+local PARTIAL_PATH_CMD_ID = 42134
+local FILE_EXTENSION_CMD_ID = 42091
 local TRACK_VIEW_ID = 1000
 local CURRENT_PROJECT = 0
+local MEDIA_EXPLORER_SECTION_ID = 32063
 
 -- global variables --
 local SEPERATOR_CHAR = string.find(reaper.GetOS(), "Win") ~= nil and "\\" or "/"
@@ -50,6 +54,37 @@ local function getMetadata(pcmSource, list)
   end
 
   return nil
+end
+
+local function sendWindowCommand(window, commandId)
+  reaper.JS_WindowMessage_Send(window, 'WM_COMMAND', commandId, 0, 0, 0)
+end
+
+local function getCommandState(commandId)
+  return reaper.GetToggleCommandStateEx(MEDIA_EXPLORER_SECTION_ID, commandId) == 1
+end
+
+local function getSelectedItemFromListView(listView)
+  local count, indices = reaper.JS_ListView_ListAllSelItems(listView)
+
+  if count == 0 or not indices or indices == "" then
+    return nil
+  end
+
+  indices = indices .. ","
+
+  local indexOfFirstComma = string.find(indices, ",")
+  local firstIndex = string.sub(indices, 0, indexOfFirstComma - 1)
+
+  return reaper.JS_ListView_GetItemText(listView, tonumber(firstIndex), OK_MESSAGE_BOX)
+end
+
+local function getParentDirectory(path)
+  local pathReversed = string.reverse(path)
+
+  local nextSeperatorChar = string.find(pathReversed, SEPERATOR_CHAR, 1)
+
+  return string.sub(path, 0, string.len(path) - nextSeperatorChar)
 end
 
 -- dependancy checks --
@@ -88,9 +123,19 @@ if not listView then
   return
 end
 
-local count, indices = reaper.JS_ListView_ListAllSelItems(listView)
+local showingFileExtension = getCommandState(FILE_EXTENSION_CMD_ID)
 
-if count == 0 or not indices or indices == "" then
+if not showingFileExtension then
+  sendWindowCommand(mediaExplorerWindow, FILE_EXTENSION_CMD_ID)
+end
+
+local selectedFilename = getSelectedItemFromListView(listView)
+
+if not selectedFilename then
+  if not showingFileExtension then
+    sendWindowCommand(mediaExplorerWindow, FILE_EXTENSION_CMD_ID)
+  end
+
   reaper.ShowMessageBox("No file is selected in the Media Explorer File List.", "Open In Strata: Failed", OK_MESSAGE_BOX)
   return
 end
@@ -98,19 +143,49 @@ end
 local directoryInputField = reaper.JS_Window_FindChildByID(mediaExplorerWindow, MEDIA_EXPLORER_DIRECTORY_ID)
 
 if not directoryInputField then
+  if not showingFileExtension then
+    sendWindowCommand(mediaExplorerWindow, FILE_EXTENSION_CMD_ID)
+  end
+
   reaper.ShowMessageBox("The script was not able to access the Media Explorer Directory.", "Open In Strata: Failed", OK_MESSAGE_BOX)
   return
 end
 
 local directory = reaper.JS_Window_GetTitle(directoryInputField)
 
-indices = indices .. ","
-
-local indexOfFirstComma = string.find(indices, ",")
-local firstIndex = string.sub(indices, 0, indexOfFirstComma - 1)
-local selectedFilename = reaper.JS_ListView_GetItemText(listView, tonumber(firstIndex), OK_MESSAGE_BOX)
-
 local filePath = directory .. SEPERATOR_CHAR .. selectedFilename
+
+-- Might be dealing with a database
+if not reaper.file_exists(filePath) then
+  showingFullPath = getCommandState(FULL_PATH_CMD_ID)
+  showingPartialPath = getCommandState(PARTIAL_PATH_CMD_ID)
+
+  if showingFullPath then
+    filePath = selectedFilename
+  else
+    -- show full path and try again
+    sendWindowCommand(mediaExplorerWindow, FULL_PATH_CMD_ID)
+
+    filePath = getSelectedItemFromListView(listView)
+
+    -- restore settings
+    sendWindowCommand(mediaExplorerWindow, FULL_PATH_CMD_ID)
+
+    if showingPartialPath then
+      sendWindowCommand(mediaExplorerWindow, PARTIAL_PATH_CMD_ID)
+    end
+
+  end
+end
+
+-- restore settings
+if not showingFileExtension then
+  sendWindowCommand(mediaExplorerWindow, FILE_EXTENSION_CMD_ID)
+end
+
+if not reaper.file_exists(filePath) then
+  reaper.ShowMessageBox("Unable to locate file `" .. filePath .. "`", "Open In Strata: Failed", OK_MESSAGE_BOX)
+end
 
 -- Read data from wav header --
 local pcmSource = reaper.PCM_Source_CreateFromFile(filePath)
@@ -134,25 +209,21 @@ if not regionName then
 end
 
 local projectPath = nil
-local directoryToSearchReverse = string.reverse(directory)
-local nextProjectDirectory = directory
-local nextSeperatorChar = 0
+local projectDirectory = getParentDirectory(filePath)
 
 while true do
-  nextProjectPath = nextProjectDirectory .. SEPERATOR_CHAR .. projectName .. ".rpp"
+  local nextProjectPath = projectDirectory .. SEPERATOR_CHAR .. projectName .. ".rpp"
 
   if reaper.file_exists(nextProjectPath) then
     projectPath = nextProjectPath
     break
   end
 
-  nextSeperatorChar = string.find(directoryToSearchReverse, SEPERATOR_CHAR, nextSeperatorChar + 1)
+  projectDirectory = getParentDirectory(projectDirectory)
 
-  if not nextSeperatorChar then
+  if not projectDirectory then
     break
   end
-
-  nextProjectDirectory = string.sub(directory, 0, string.len(directory) - nextSeperatorChar)
 end
 
 if not projectPath then
