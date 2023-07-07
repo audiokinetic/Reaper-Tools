@@ -26,15 +26,20 @@ local utils = dofile(scriptPath.."Utilities.lua")
 local tempProject, _ = reaper.EnumProjects( -1, "" )
 
 local firstTrack = reaper.GetTrack(utils.CURRENT_PROJECT, 0)
+
+if not firstTrack then
+  reaper.ShowMessageBox("No audio file sent to REAPER!", "Open Associated REAPER Project: Failed", utils.OK_MESSAGE_BOX)
+  return
+end
+
 local mediaItemCount = reaper.CountTrackMediaItems(firstTrack)
 local mediaItem = reaper.GetTrackMediaItem(firstTrack, 0)
 local mediaItemTake = reaper.GetActiveTake(mediaItem)
 local pcmSource = reaper.GetMediaItemTake_Source(mediaItemTake)
 local filePath = reaper.GetMediaSourceFileName(pcmSource)
 
-
 if not reaper.file_exists(filePath) then
-  reaper.ShowMessageBox("Unable to locate file `" .. filePath .. "`", "Open Associated REAPER Project: Failed", OK_MESSAGE_BOX)
+  reaper.ShowMessageBox("Unable to locate file `" .. filePath .. "`", "Open Associated REAPER Project: Failed", utils.OK_MESSAGE_BOX)
   return
 end
 

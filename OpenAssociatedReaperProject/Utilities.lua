@@ -84,15 +84,15 @@ end
 -- JS dependency check --
 function Utilities.JSDependencyCheck()
   if not reaper.JS_Window_FindChildByID or not reaper.JS_Window_Find or not reaper.JS_Window_SetScrollPos or not reaper.JS_Dialog_BrowseForFolder then
-      local selectedOption = reaper.ShowMessageBox("The script requires the latest version of js_ReaScriptAPI be installed.\n\nView in ReaPack?", "Open Associated REAPER Project: Failed", OK_CANCEL_MESSAGE_BOX)
+      local selectedOption = reaper.ShowMessageBox("The script requires the latest version of js_ReaScriptAPI be installed.\n\nView in ReaPack?", "Open Associated REAPER Project: Failed", Utilities.OK_CANCEL_MESSAGE_BOX)
 
-      if selectedOption == OK_RESULT then
+      if selectedOption == Utilities.OK_RESULT then
         if reaper.ReaPack_BrowsePackages then
           reaper.ReaPack_BrowsePackages("js_ReaScriptAPI")
         else
-          selectedOption = reaper.ShowMessageBox("Unable to locate ReaPack. You can download ReaPack by going to https://reapack.com.\n\nGo there now?", "Open Associated REAPER Project: Failed", OK_CANCEL_MESSAGE_BOX)
+          selectedOption = reaper.ShowMessageBox("Unable to locate ReaPack. You can download ReaPack by going to https://reapack.com.\n\nGo there now?", "Open Associated REAPER Project: Failed", Utilities.OK_CANCEL_MESSAGE_BOX)
 
-          if selectedOption == OK_RESULT then
+          if selectedOption == Utilities.OK_RESULT then
             openUrl("https://reapack.com")
           end
         end
