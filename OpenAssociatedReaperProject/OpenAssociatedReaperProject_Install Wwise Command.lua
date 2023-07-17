@@ -99,7 +99,7 @@ if utils.WindowsOS() then
   openInReaperPath = openInReaperPath:gsub("/", "\\")
 end
 
-reaper.RecursiveCreateDirectory(openInReaperPath)
+reaper.RecursiveCreateDirectory(openInReaperPath, 0)
 openInReaperPath = openInReaperPath.."OpenAssociatedReaperProject.json"
 
 file, err = io.open(openInReaperPath, "w")
