@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="3ff02e2876443beb7fd0f30df260d97a4511b409">
+<index version="1" name="Audiokinetic" commit="a472587a926117b9796cddb80af53a43d08e598a">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -118,6 +118,12 @@ Bug Fixes:
         <source file="Utilities.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/3ff02e2876443beb7fd0f30df260d97a4511b409/OpenAssociatedReaperProject/Utilities.lua</source>
         <source file="OpenAssociatedReaperProject_Script.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/3ff02e2876443beb7fd0f30df260d97a4511b409/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Script.lua</source>
         <source main="main" file="OpenAssociatedReaperProject_Install Wwise Command.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/3ff02e2876443beb7fd0f30df260d97a4511b409/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Install%20Wwise%20Command.lua</source>
+      </version>
+      <version name="1.0.0-rc.2" author="Audiokinetic" time="2023-07-18T14:37:11Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source file="Utilities.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/a472587a926117b9796cddb80af53a43d08e598a/OpenAssociatedReaperProject/Utilities.lua</source>
+        <source file="OpenAssociatedReaperProject_Script.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/a472587a926117b9796cddb80af53a43d08e598a/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Script.lua</source>
+        <source main="main" file="OpenAssociatedReaperProject_Install Wwise Command.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/a472587a926117b9796cddb80af53a43d08e598a/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Install%20Wwise%20Command.lua</source>
       </version>
     </reapack>
   </category>
