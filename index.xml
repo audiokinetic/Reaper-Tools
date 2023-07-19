@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="a472587a926117b9796cddb80af53a43d08e598a">
+<index version="1" name="Audiokinetic" commit="fac30dda0a7582c2687dc031165aa684724ff273">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -35,12 +35,12 @@ Community Q&A
 open an issue
 }}}
 .\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Feature requests can also be submitted to the {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/feature-requests/"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 Feature requests can also be submitted to the {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/questions/reawwise"}}{\fldrslt{\ul
 feature request section
 }}}
  of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2022 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2023 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
 Audiokinetic Inc.
 }}}
  All rights reserved.\par}
@@ -84,6 +84,40 @@ Bug Fixes:
   - Fixed: When attempting to create a Sound SFX directly under a Physical Folder (an illegal parent/child relationship), no error is generated and the audio files are added to the Originals folder.]]></changelog>
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.4/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.4/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.5" author="Audiokinetic" time="2023-07-19T14:48:16Z">
+        <changelog><![CDATA[New Features:
+
+- Added the ability to copy lines from the preview to the clipboard.
+
+- Object names with unresolved wildcards now display the placeholder
+  text "<wildcard_missing>". During transfer operations, users will be
+  warned about incomplete paths. They have the option to proceed while
+  skipping the import or creation of objects that contain these
+  incomplete paths.
+
+Bug Fixes:
+
+- Fixed: Possible to import sound voices without selecting a language.
+  Sound voice objects now default to the appropriate language based on
+  the version of Wwise being used. For Wwise Version 21.1 and earlier,
+  the default language is set to the first language in the project's
+  language list. For Wwise 22.1 and later, the default language is set
+  to the reference language of the Wwise project.
+
+- Fixed: Incorrect icon displayed for actor mixer containers in the
+  preview panel.
+
+- Fixed: When the import summary has many errors, the View Details and
+  Close buttons overlap some text.
+
+- Fixed: Import fails when the file path contains non English
+  characters. Changed the font from Open Sans to GoNotoCurrent to
+  support additional languages including Japanese and Chinese. More
+  information on the exact character set supported is on GitHub at:
+  https://github.com/satbyy/go-noto-universal]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.5/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.5/reaper_reawwise.dylib</source>
       </version>
     </reapack>
   </category>
@@ -148,4 +182,24 @@ Bug Fixes:
       </version>
     </reapack>
   </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Audiokinetic Reaper Tools Repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Collection of extensions, scripts and tools for Reaper.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in {\b Extensions} > {\b ReaPack} > {\b Import repositories...}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 https://github.com/Audiokinetic/Reaper-Tools/raw/main/index.xml\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 About Audiokinetic\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Audiokinetic is the leading provider of cross-platform audio solutions for interactive media and gaming. The company's middleware solutions include the award-winning Wwise\u174 ? and SoundSeed\u174 ?, as well as Wwise Automotive\u8482 ? and Strata\u8482 ?. For more information, please visit http://www.audiokinetic.com/\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2023 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+Audiokinetic Inc.
+}}}
+ All rights reserved.\par}
+}
+]]></description>
+  </metadata>
 </index>

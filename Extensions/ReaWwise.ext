@@ -1,21 +1,37 @@
 @description ReaWwise
 @author Audiokinetic
-@version 1.0.4
+@version 1.0.5
 @changelog
   New Features:
-    - Added "ReaWwise: Open", "ReaWwise: Close" and "ReaWwise: Transfer To Wwise" actions to REAPER's action list. And added AK_Json_Clear and AK_Json_ClearAll functions to ReaScript.
 
-  Miscellaneous Changes:
-    - Made read-only text fields look different from editable ones.
-    - Added focus feedback for drop-down lists.
-    - Added more tooltips throughout the user interface.
-    - Added Actor-Mixer as a possible Object Type for Wwise structures.
+  - Added the ability to copy lines from the preview to the clipboard.
+
+  - Object names with unresolved wildcards now display the placeholder
+    text "<wildcard_missing>". During transfer operations, users will be
+    warned about incomplete paths. They have the option to proceed while
+    skipping the import or creation of objects that contain these
+    incomplete paths.
 
   Bug Fixes:
-    - Fixed: A corrupted preset file is created when clicking Cancel in the Wwise structures Save Preset dialog.
-    - Fixed: Transfer to Wwise button is still available when there are no items in preview pane.
-    - Fixed: Import details are wrong when Originals folder is blank.
-    - Fixed: When attempting to create a Sound SFX directly under a Physical Folder (an illegal parent/child relationship), no error is generated and the audio files are added to the Originals folder.
+
+  - Fixed: Possible to import sound voices without selecting a language.
+    Sound voice objects now default to the appropriate language based on
+    the version of Wwise being used. For Wwise Version 21.1 and earlier,
+    the default language is set to the first language in the project's
+    language list. For Wwise 22.1 and later, the default language is set
+    to the reference language of the Wwise project.
+
+  - Fixed: Incorrect icon displayed for actor mixer containers in the
+    preview panel.
+
+  - Fixed: When the import summary has many errors, the View Details and
+    Close buttons overlap some text.
+
+  - Fixed: Import fails when the file path contains non English
+    characters. Changed the font from Open Sans to GoNotoCurrent to
+    support additional languages including Japanese and Chinese. More
+    information on the exact character set supported is on GitHub at:
+    https://github.com/satbyy/go-noto-universal
 @provides
   [win64] reaper_reawwise.dll https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dll
   [darwin] reaper_reawwise.dylib https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dylib
@@ -48,10 +64,10 @@
   ## Contributing
   The repository is not open to pull request but in the case of a bug report, bugfix or a suggestions, please feel free to [open an issue](https://github.com/audiokinetic/ReaWwise/issues).
 
-  Feature requests can also be submitted to the [feature request section](https://www.audiokinetic.com/qa/feature-requests/) of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.
+  Feature requests can also be submitted to the [feature request section](https://www.audiokinetic.com/qa/questions/reawwise) of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.
 
   ## Legal
-  Copyright © 2022 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
+  Copyright © 2023 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
 
   ## Acknowledgements
   Inspired by the work of [Karl Davis](https://github.com/karltechno)
