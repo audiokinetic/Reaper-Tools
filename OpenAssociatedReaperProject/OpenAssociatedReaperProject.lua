@@ -1,6 +1,6 @@
 @description Open Associated REAPER Project
 @author Audiokinetic
-@version 1.0.0-rc.2
+@version 1.0.0
 @metapackage
 @provides
   [nomain] Utilities.lua https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/$commit/OpenAssociatedReaperProject/Utilities.lua
