@@ -1,11 +1,13 @@
 --[[
-  @description Copy Collection Elements Within Selection To Next Project Tab
+  @description Copy collection elements within selection to next project tab
   @author Audiokinetic
   @version 0.0.1a
   @changelog
-    Initial release.
+    Alpha release.
+  @provides
+    [main=main] . https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/$commit/Scripts/Strata_Copy%20collection%20elements%20within%20selection%20to%20next%20project%20tab.lua
   @about
-    # Copy Collection Elements Within Selection To Next Project Tab
+    # Copy collection elements within selection to next project tab
     This script will identify regions and clips within user's time selection, hide any tracks that are not parents and have NO items - or tracks that are purposefully muted.
     Project content is then copied from the current project tab to the next open project tab to the immediate right.
 
