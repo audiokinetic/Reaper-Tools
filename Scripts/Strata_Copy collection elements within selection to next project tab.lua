@@ -68,6 +68,7 @@ local track_children = {}
 -- Collect all tracks AND identify items that are within the time selection
 local item_buffer = {}
 local track_count = reaper.CountTracks(currentProj)
+local firstItemPos = 9999999
 for i = 0, track_count - 1 do
   local track = reaper.GetTrack(currentProj, i)
   table.insert(all_tracks, track)
@@ -87,8 +88,15 @@ for i = 0, track_count - 1 do
 
     if item_pos < time_sel_start or item_pos > time_sel_end then
       table.insert(item_buffer, {track = track, item = item})
+    elseif item_pos < firstItemPos then
+      firstItemPos = item_pos
     end
   end
+end
+
+-- Safety first
+if firstItemPos == 9999999 then
+  firstItemPos = 0
 end
 
 -- Begin Undo Block
@@ -125,6 +133,25 @@ for _, track in ipairs(all_tracks) do
   end
 end
 
+-- Open next project to get the destination position offset
+reaper.Main_OnCommand(ACTIVATE_NEXT_PROJECT_TAB, 0)
+local cursorPosition = reaper.GetCursorPosition()
+local itemPositionOffset = 0 - firstItemPos + cursorPosition
+
+-- Go back to previous project tab and move all items
+reaper.Main_OnCommand(ACTIVATE_PREVIOUS_PROJECT_TAB, 0)
+for _, track in ipairs(all_tracks) do
+  if should_copy_track(track) then
+
+    local item_count = reaper.CountTrackMediaItems(track)
+    for j = 0, item_count - 1 do
+      local item = reaper.GetTrackMediaItem(track, j)
+      local item_pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
+      reaper.SetMediaItemPosition(item, item_pos + itemPositionOffset, false)
+    end
+  end
+end
+
 -- Select and copy items and tracks
 reaper.Main_OnCommand(SELECT_ALL_ITEMS, 0)
 reaper.Main_OnCommand(COPY_TRACKS, 0)
@@ -156,7 +183,7 @@ reaper.Undo_BeginBlock()
 
 reaper.Main_OnCommand(PASTE_TRACKS_IN_PROJECT, 0)
 for _, region in ipairs(regions_to_copy) do
-  reaper.AddProjectMarker2(0, true, region.pos, region.rgn_end, region.name, -1, region.color)
+  reaper.AddProjectMarker2(0, true, region.pos + itemPositionOffset, region.rgn_end + itemPositionOffset, region.name, -1, region.color)
 end
 
 -- End Undo Block
