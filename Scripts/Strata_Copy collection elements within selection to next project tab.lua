@@ -58,7 +58,13 @@ local currentProj = reaper.EnumProjects(-1)
 
 local time_sel_start, time_sel_end = reaper.GetSet_LoopTimeRange2(currentProj, false, false, 0, 0, false)
 if time_sel_start == time_sel_end then
-  assert(nil, "There is nothing to copy. Please make a time selection.")
+  reaper.ShowMessageBox("There is nothing to copy. Please make a time selection!", "Strata Copy Script Error", 0)
+  return
+end
+
+-- No point continuing script if there are no tracks selected!
+if reaper.CountSelectedTracks(currentProj) == 0 then
+  reaper.ShowMessageBox("No selected tracks to copy!", "Strata Copy Script Error", 0)
   return
 end
 
