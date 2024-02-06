@@ -50,9 +50,9 @@
 local EDIT_UNDO = 40029                      -- Edit: Undo
 local SELECT_ALL_ITEMS = 40182               -- Item: Select all items
 local COPY_TRACKS = 40210                    -- Track: Copy tracks
+local PASTE_TRACKS = 42398                   -- Item: Paste items/tracks (Ctrl-V)
 local ACTIVATE_NEXT_PROJECT_TAB = 40861      -- Next project tab
 local ACTIVATE_PREVIOUS_PROJECT_TAB = 40862  -- Previous project tab
-local PASTE_TRACKS_IN_PROJECT = 41221        -- Item: Paste items/tracks at mouse position
 
 local currentProj = reaper.EnumProjects(-1)
 
@@ -150,10 +150,14 @@ for _, track in ipairs(all_tracks) do
   if should_copy_track(track) then
 
     local item_count = reaper.CountTrackMediaItems(track)
+    local track_items = {}
     for j = 0, item_count - 1 do
       local item = reaper.GetTrackMediaItem(track, j)
       local item_pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
-      reaper.SetMediaItemPosition(item, item_pos + itemPositionOffset, false)
+      table.insert(track_items, {item = item, item_pos = item_pos})
+    end
+    for _, data in ipairs(track_items) do
+      reaper.SetMediaItemPosition(data.item, data.item_pos + itemPositionOffset, false)
     end
   end
 end
@@ -187,7 +191,7 @@ reaper.Main_OnCommand(ACTIVATE_NEXT_PROJECT_TAB, 0)
 -- Begin Undo Block
 reaper.Undo_BeginBlock()
 
-reaper.Main_OnCommand(PASTE_TRACKS_IN_PROJECT, 0)
+reaper.Main_OnCommand(PASTE_TRACKS, 0)
 for _, region in ipairs(regions_to_copy) do
   reaper.AddProjectMarker2(0, true, region.pos + itemPositionOffset, region.rgn_end + itemPositionOffset, region.name, -1, region.color)
 end
