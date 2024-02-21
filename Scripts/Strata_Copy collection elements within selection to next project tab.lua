@@ -51,10 +51,25 @@ local EDIT_UNDO = 40029                      -- Edit: Undo
 local SELECT_ALL_ITEMS = 40182               -- Item: Select all items
 local COPY_TRACKS = 40210                    -- Track: Copy tracks
 local PASTE_TRACKS = 42398                   -- Item: Paste items/tracks (Ctrl-V)
+local NEW_PROJECT_TAB = 40859                -- New project tab
 local ACTIVATE_NEXT_PROJECT_TAB = 40861      -- Next project tab
 local ACTIVATE_PREVIOUS_PROJECT_TAB = 40862  -- Previous project tab
 
 local currentProj = reaper.EnumProjects(-1)
+local nbProjectTabs = 0
+if currentProj then
+  repeat
+    reaper.Main_OnCommand(ACTIVATE_NEXT_PROJECT_TAB, 0)
+    local proj = reaper.EnumProjects(-1)
+    nbProjectTabs = nbProjectTabs + 1
+  until proj == currentProj
+
+  local lastProject = reaper.EnumProjects(nbProjectTabs-1)
+  if lastProject == currentProj then
+    reaper.Main_OnCommand(NEW_PROJECT_TAB, 0)
+    reaper.Main_OnCommand(ACTIVATE_PREVIOUS_PROJECT_TAB, 0)
+  end
+end
 
 local time_sel_start, time_sel_end = reaper.GetSet_LoopTimeRange2(currentProj, false, false, 0, 0, false)
 if time_sel_start == time_sel_end then
