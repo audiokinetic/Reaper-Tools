@@ -179,7 +179,16 @@ end
 
 -- Select and copy items and tracks
 reaper.Main_OnCommand(SELECT_ALL_ITEMS, 0)
+-- Only copies selected tracks
 reaper.Main_OnCommand(COPY_TRACKS, 0)
+
+-- No media in region to be copied
+if reaper.CountSelectedMediaItems(currentProj) == 0
+  reaper.Undo_EndBlock("No media in region to be copied", -1)
+  reaper.Main_OnCommand(EDIT_UNDO, 0)
+  reaper.ShowMessageBox("No media in region to be copied!", "Strata Copy Script Error", 0)
+  return
+end
 
 -- Collect regions inside the time selection
 local regions_to_copy = {}
@@ -194,11 +203,11 @@ end
 reaper.TrackList_AdjustWindows(false)
 reaper.UpdateArrange()
 
--- End Undo Block
-local UNDO_ENDBLOCK_DO_NOT_ADD_TO_UNDO_HISTORY = -1
-reaper.Undo_EndBlock("Remove contents outside time sel", UNDO_ENDBLOCK_DO_NOT_ADD_TO_UNDO_HISTORY)
 
+-- End Undo Block
+reaper.Undo_EndBlock("Remove contents outside time sel", -1)
 reaper.Main_OnCommand(EDIT_UNDO, 0)
+
 
 -- Activate the other open project window and paste tracks and regions
 reaper.Main_OnCommand(ACTIVATE_NEXT_PROJECT_TAB, 0)
