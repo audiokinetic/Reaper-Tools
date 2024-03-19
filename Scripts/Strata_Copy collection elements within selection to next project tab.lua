@@ -1,9 +1,9 @@
 --[[
-  @description Copy collection elements within selection to next project tab
+  @description Strata_Copy collection elements within selection to next project tab
   @author Audiokinetic
-  @version 0.0.1a
+  @version 1.0.0
   @changelog
-    Alpha release.
+    Initial release.
   @provides
     [main=main] . https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/$commit/Scripts/Strata_Copy%20collection%20elements%20within%20selection%20to%20next%20project%20tab.lua
   @about
@@ -17,13 +17,13 @@
 
     ## Contributing
     The repository is not open to pull request but in the case of a bug report, bugfix or a suggestions, please feel free to contact us
-    via the [feature request section](http://www.audiokinetic.com/qa/feature-requests/) of Audiokinetic's Community Q&A. 
+    via the [feature request section](http://www.audiokinetic.com/qa/feature-requests/) of Audiokinetic's Community Q&A.
 
     ## Legal
-    Copyright (c) 2023 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
+    Copyright (c) 2024 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
 
     ## License
-    Copyright (c) 2023 AUDIOKINETIC Inc.
+    Copyright (c) 2024 AUDIOKINETIC Inc.
 
     The script in this file is licensed to use under the license available at:
     https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/main/License.txt (the "License").
@@ -34,7 +34,7 @@
     CONDITIONS OF ANY KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations under the License.
   @license
-    Copyright (c) 2023 AUDIOKINETIC Inc.
+    Copyright (c) 2024 AUDIOKINETIC Inc.
 
     The script in this file is licensed to use under the license available at:
     https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/main/License.txt (the "License").
