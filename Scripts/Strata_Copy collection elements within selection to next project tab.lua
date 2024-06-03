@@ -183,7 +183,7 @@ reaper.Main_OnCommand(SELECT_ALL_ITEMS, 0)
 reaper.Main_OnCommand(COPY_TRACKS, 0)
 
 -- No media in region to be copied
-if reaper.CountSelectedMediaItems(currentProj) == 0
+if reaper.CountSelectedMediaItems(currentProj) == 0 then
   reaper.Undo_EndBlock("No media in region to be copied", -1)
   reaper.Main_OnCommand(EDIT_UNDO, 0)
   reaper.ShowMessageBox("No media in region to be copied!", "Strata Copy Script Error", 0)
