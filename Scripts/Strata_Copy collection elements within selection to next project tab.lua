@@ -1,9 +1,9 @@
 --[[
   @description Strata_Copy collection elements within selection to next project tab
   @author Audiokinetic
-  @version 1.0.0
+  @version 1.0.1
   @changelog
-    Initial release.
+    SP-4458: Fix if/then bug.
   @provides
     [main=main] . https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/$commit/Scripts/Strata_Copy%20collection%20elements%20within%20selection%20to%20next%20project%20tab.lua
   @about
