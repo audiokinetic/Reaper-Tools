@@ -1,37 +1,12 @@
 @description ReaWwise
 @author Audiokinetic
-@version 1.0.5
+@version 1.0.6a
 @changelog
   New Features:
 
-  - Added the ability to copy lines from the preview to the clipboard.
+  - Added the ability to transfer files from REAPER to an instance of Wwise 
+    located on a different machine.
 
-  - Object names with unresolved wildcards now display the placeholder
-    text "<wildcard_missing>". During transfer operations, users will be
-    warned about incomplete paths. They have the option to proceed while
-    skipping the import or creation of objects that contain these
-    incomplete paths.
-
-  Bug Fixes:
-
-  - Fixed: Possible to import sound voices without selecting a language.
-    Sound voice objects now default to the appropriate language based on
-    the version of Wwise being used. For Wwise Version 21.1 and earlier,
-    the default language is set to the first language in the project's
-    language list. For Wwise 22.1 and later, the default language is set
-    to the reference language of the Wwise project.
-
-  - Fixed: Incorrect icon displayed for actor mixer containers in the
-    preview panel.
-
-  - Fixed: When the import summary has many errors, the View Details and
-    Close buttons overlap some text.
-
-  - Fixed: Import fails when the file path contains non English
-    characters. Changed the font from Open Sans to GoNotoCurrent to
-    support additional languages including Japanese and Chinese. More
-    information on the exact character set supported is on GitHub at:
-    https://github.com/satbyy/go-noto-universal
 @provides
   [win64] reaper_reawwise.dll https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dll
   [darwin] reaper_reawwise.dylib https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dylib
@@ -67,7 +42,7 @@
   Feature requests can also be submitted to the [feature request section](https://www.audiokinetic.com/qa/questions/reawwise) of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.
 
   ## Legal
-  Copyright © 2023 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
+  Copyright © 2024 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
 
   ## Acknowledgements
   Inspired by the work of [Karl Davis](https://github.com/karltechno)
