@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="5f7c0cbc983f6554414b92fb1eacf195d93d9d4f">
+<index version="1" name="Audiokinetic" commit="69cbc9458937af1b4295a9e8fa47293e49885dbd">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -40,7 +40,7 @@ feature request section
 }}}
  of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2023 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2024 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
 Audiokinetic Inc.
 }}}
  All rights reserved.\par}
@@ -118,6 +118,14 @@ Bug Fixes:
   https://github.com/satbyy/go-noto-universal]]></changelog>
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.5/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.5/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.6a" author="Audiokinetic" time="2024-06-26T20:56:05Z">
+        <changelog><![CDATA[New Features:
+
+- Added the ability to transfer files from REAPER to an instance of Wwise 
+  located on a different machine.]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6a/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6a/reaper_reawwise.dylib</source>
       </version>
     </reapack>
   </category>
