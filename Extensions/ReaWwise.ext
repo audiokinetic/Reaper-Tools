@@ -6,7 +6,6 @@
 
   - Added the ability to transfer files from REAPER to an instance of Wwise 
     located on a different machine.
-
 @provides
   [win64] reaper_reawwise.dll https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dll
   [darwin] reaper_reawwise.dylib https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dylib
