@@ -1,9 +1,9 @@
 --[[
   @description Strata_Copy selection to next project
   @author Audiokinetic
-  @version 1.0.2a
+  @version 1.0.2
   @changelog
-    SP-4763: Rename Script to "Strata_Copy selection to next project"
+    SP-4763: Remove the alpha flag
   @provides
     [main=main] . https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/$commit/Scripts/Strata_Copy%20selection%20to%20next%20project.lua
   @about
