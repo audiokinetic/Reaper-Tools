@@ -1,11 +1,18 @@
 @description ReaWwise
 @author Audiokinetic
-@version 1.0.6a
+@version 1.0.6
 @changelog
-  New Features:
+  New Features
+    - A visual confirmation of the connection status is now displayed near the Project Path.
+    - Added the ability to transfer files from REAPER to an instance of Wwise located on a different machine.
 
-  - Added the ability to transfer files from REAPER to an instance of Wwise 
-    located on a different machine.
+  Behavior Changes
+    - The Actor-Mixer hierarchy has been renamed to Containers in Wwise 25.1. ReaWwise supports both the new and earlier naming conventions.
+
+  Bug Fixes
+    - Fixed: Possible to import objects to the root directory, which causes asserts and other unintended behavior.
+    - Fixed: Cross-machine transfer is possible when "Enable Cross Machine Transfer" option is not selected.
+    - Fixed: Project Path text field and Import button are disabled when connection to Wwise is lost.
 @provides
   [win64] reaper_reawwise.dll https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dll
   [darwin] reaper_reawwise.dylib https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dylib
@@ -38,10 +45,10 @@
   ## Contributing
   The repository is not open to pull request but in the case of a bug report, bugfix or a suggestions, please feel free to [open an issue](https://github.com/audiokinetic/ReaWwise/issues).
 
-  Feature requests can also be submitted to the [feature request section](https://www.audiokinetic.com/qa/questions/reawwise) of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.
+  Feature requests can also be submitted via the ["Ask a Question"](https://www.audiokinetic.com/qa/questions/reawwise) section using ReaWwise as the category.
 
   ## Legal
-  Copyright © 2024 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
+  Copyright © 2025 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
 
   ## Acknowledgements
   Inspired by the work of [Karl Davis](https://github.com/karltechno)

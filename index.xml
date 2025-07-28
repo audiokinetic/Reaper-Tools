@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="a7149e11db207fb085fc8f70bb389281841beeae">
+<index version="1" name="Audiokinetic" commit="3058a582c5443a08b42cc21cf4c0bb0858dbcb3d">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -35,12 +35,12 @@ Community Q&A
 open an issue
 }}}
 .\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Feature requests can also be submitted to the {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/questions/reawwise"}}{\fldrslt{\ul
-feature request section
+{\pard \ql \f0 \sa180 \li0 \fi0 Feature requests can also be submitted via the {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/questions/reawwise"}}{\fldrslt{\ul
+"Ask a Question"
 }}}
- of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.\par}
+ section using ReaWwise as the category.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2024 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2025 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
 Audiokinetic Inc.
 }}}
  All rights reserved.\par}
@@ -127,6 +127,21 @@ Bug Fixes:
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6a/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6a/reaper_reawwise.dylib</source>
       </version>
+      <version name="1.0.6" author="Audiokinetic" time="2025-07-24T20:42:24Z">
+        <changelog><![CDATA[New Features
+  - A visual confirmation of the connection status is now displayed near the Project Path.
+  - Added the ability to transfer files from REAPER to an instance of Wwise located on a different machine.
+
+Behavior Changes
+  - The Actor-Mixer hierarchy has been renamed to Containers in Wwise 25.1. ReaWwise supports both the new and earlier naming conventions.
+
+Bug Fixes
+  - Fixed: Possible to import objects to the root directory, which causes asserts and other unintended behavior.
+  - Fixed: Cross-machine transfer is possible when "Enable Cross Machine Transfer" option is not selected.
+  - Fixed: Project Path text field and Import button are disabled when connection to Wwise is lost.]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6/reaper_reawwise.dylib</source>
+      </version>
     </reapack>
   </category>
   <category name="OpenAssociatedReaperProject">
@@ -192,12 +207,12 @@ feature request section
 }}}
  of Audiokinetic's Community Q&A.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Copyright (c) 2024 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright (c) 2025 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
 Audiokinetic Inc.
 }}}
  All rights reserved.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 License\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Copyright (c) 2024 AUDIOKINETIC Inc.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright (c) 2025 AUDIOKINETIC Inc.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 The script in this file is licensed to use under the license available at: https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/main/License.txt (the "License"). You may not use this file except in compliance with the License.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\par}
 }
@@ -245,7 +260,7 @@ Audiokinetic Inc.
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 About Audiokinetic\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Audiokinetic is the leading provider of cross-platform audio solutions for interactive media and gaming. The company's middleware solutions include the award-winning Wwise\u174 ? and SoundSeed\u174 ?, as well as Wwise Automotive\u8482 ? and Strata\u8482 ?. For more information, please visit http://www.audiokinetic.com/\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2023 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2025 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
 Audiokinetic Inc.
 }}}
  All rights reserved.\par}
