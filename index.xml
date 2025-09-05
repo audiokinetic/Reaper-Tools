@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="3058a582c5443a08b42cc21cf4c0bb0858dbcb3d">
+<index version="1" name="Audiokinetic" commit="ec0879be6123745b1ad480534b57ddd65adbf3c9">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -141,6 +141,12 @@ Bug Fixes
   - Fixed: Project Path text field and Import button are disabled when connection to Wwise is lost.]]></changelog>
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.7a" author="Audiokinetic" time="2025-09-04T18:11:48Z">
+        <changelog><![CDATA[Bug Fixes
+  - Fixed: ReaWwise Wwise structures are now saved with each project and will be maintained when switching between projects. When you return to a project, its saved Wwise structures will be recalled.]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.7a/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.7a/reaper_reawwise.dylib</source>
       </version>
     </reapack>
   </category>
