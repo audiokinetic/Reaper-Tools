@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Audiokinetic" commit="ec0879be6123745b1ad480534b57ddd65adbf3c9">
+<index version="1" name="Audiokinetic" commit="1827144c6ad0da6e77509f9671edf0ee2b3c7bdb">
   <category name="Extensions">
     <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
       <metadata>
@@ -147,6 +147,12 @@ Bug Fixes
   - Fixed: ReaWwise Wwise structures are now saved with each project and will be maintained when switching between projects. When you return to a project, its saved Wwise structures will be recalled.]]></changelog>
         <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.7a/reaper_reawwise.dll</source>
         <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.7a/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.7" author="Audiokinetic" time="2025-09-26T15:09:59Z">
+        <changelog><![CDATA[Bug Fixes
+  - Fixed: ReaWwise Wwise structures are now saved with each project and will be maintained when switching between projects. When you return to a project, its saved Wwise structures will be recalled.]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.7/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.7/reaper_reawwise.dylib</source>
       </version>
     </reapack>
   </category>

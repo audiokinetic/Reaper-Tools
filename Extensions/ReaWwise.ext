@@ -1,6 +1,6 @@
 @description ReaWwise
 @author Audiokinetic
-@version 1.0.7a
+@version 1.0.7
 @changelog
   Bug Fixes
     - Fixed: ReaWwise Wwise structures are now saved with each project and will be maintained when switching between projects. When you return to a project, its saved Wwise structures will be recalled.
